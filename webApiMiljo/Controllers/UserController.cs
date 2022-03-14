@@ -25,7 +25,10 @@ namespace webApiMiljo.Controllers
         }
 
         //GET
+        //[HttpGet("Get Customer")]
+        //[Route()]
         //UPDATE
+
         //DELETE
     }
 }

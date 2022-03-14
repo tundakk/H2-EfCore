@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using webApiMiljo.MODELS;
 
@@ -11,9 +12,10 @@ using webApiMiljo.MODELS;
 namespace webApiMiljo.Migrations
 {
     [DbContext(typeof(MyContext))]
-    partial class MyContextModelSnapshot : ModelSnapshot
+    [Migration("20220314184810_OrderProductsOrderProduct")]
+    partial class OrderProductsOrderProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -134,11 +136,11 @@ namespace webApiMiljo.Migrations
 
             modelBuilder.Entity("webApiMiljo.MODELS.ProductOrder", b =>
                 {
-                    b.Property<int>("ProductOrderId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductOrderId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
@@ -149,7 +151,7 @@ namespace webApiMiljo.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.HasKey("ProductOrderId");
+                    b.HasKey("Id");
 
                     b.HasIndex("OrderId");
 
